@@ -1,6 +1,7 @@
 const express =  require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT||3000;
 hbs.registerPartials(__dirname+'/views/partials');
 var app = express();
 app.use(express.static(__dirname+'/public'));
@@ -34,9 +35,7 @@ res.render('welcome.hbs',{
   welcomeText : 'You are welcome to Nodejs Project'
 })
 });
-app.listen(3000,()=>{
-  console.log('Server started on port 3000');
-});
+
 
 
 app.get('/bad',(req,res)=>{
@@ -44,3 +43,7 @@ app.get('/bad',(req,res)=>{
     errorMessage: 'Bad Request'
   });
 })
+
+app.listen(port,()=>{
+  console.log(`Server listening on port ${port}`);
+});
