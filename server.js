@@ -36,6 +36,20 @@ res.render('welcome.hbs',{
 })
 });
 
+app.get('/about',(req,res)=>{
+res.render('about.hbs',{
+  pageTitle : 'About US',
+    welcomeText : 'This is the About Us page'
+})
+});
+
+app.get('/portfolio',(req,res)=>{
+res.render('portfolio.hbs',{
+  pageTitle : 'Portfolio',
+  welcomeText : 'This is the portfolio page'
+})
+});
+
 
 
 app.get('/bad',(req,res)=>{
